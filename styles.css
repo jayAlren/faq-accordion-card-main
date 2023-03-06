@@ -18,6 +18,7 @@ Dividers
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 body {
@@ -39,27 +40,6 @@ body {
   transform: translate(-50%, -50%); */
 }
 
-.contain-group {
-  display: flex;
-}
-
-.contain-items {
-  color: hsl(237, 12%, 33%);
-}
-
-.contain-items:nth-of-type(2) {
-  border: 1px solid red;
-}
-
-.contain-items-bgPattern {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid blue;
-  height: 200px;
-  width: 200px;
-  left: -50%;
-}
-
 .contain {
   display: flex;
   align-items: center;
@@ -68,7 +48,108 @@ body {
   background-color: hsl(0, 0%, 100%);
   border: none;
   border-radius: 1.5em;
-  text-align: center;
+}
+
+.contain-items {
+  color: hsl(237, 12%, 33%);
+}
+
+.contain-items:nth-of-type(1) {
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  width: 1200px;
+  /* IMPORTANT! */
+  flex: 1;
+}
+
+.contain-items:nth-of-type(2) {
+  flex: 1;
+  height: 400px;
+  padding: 1.75em 0;
+  border: 1px solid green;
+}
+
+.contain-items-bgPattern {
+  position: absolute;
+  object-fit: contain;
+  height: 700px;
+  width: 700px;
+  top: -55%;
+  left: -102%;
+  z-index: 1;
+}
+
+/* .contain-items-bgPattern {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-size: contain;
+  top: -52%;
+  left: -85%;
+  height: 700px;
+  width: 700px;
+} */
+
+.contain-items-Pattern {
+  position: absolute;
+  object-fit: contain;
+  height: 350px;
+  width: 350px;
+  top: 0;
+  left: -15%;
+  z-index: 2;
+}
+
+.contain-items-box {
+  position: fixed;
+  object-fit: contain;
+  overflow: visible;
+  top: 34%;
+  left: 14%;
+  z-index: 3;
+}
+
+.contain-items h1 {
+  margin: .5em 0;
+}
+
+.contain-items-tabs,
+.contain-items-tabs * {
+  box-sizing: border-box;
+}
+
+.contain-items-tabs {
+  max-width: 100%;
+}
+
+.contain-items-tabs input {
+  display: none;
+}
+
+.contain-items-tabs label {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 1em 0;
+  font-weight: 700;
+  color: hsl(240, 6%, 50%);
+  cursor: pointer;
+}
+
+.contain-items-tabs .contain-items-tabs-content {
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+
+.contain-items-tabs .contain-items-tabs-content p {
+  padding: .625em 0;
+}
+
+.contain-items-tabs input:checked~.contain-items-tabs-content {
+  max-height: 100dvh;
+
 }
 
 footer {
