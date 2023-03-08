@@ -54,20 +54,22 @@ body {
   color: hsl(237, 12%, 33%);
 }
 
-.contain-items:nth-of-type(1) {
+.contain-items-illustrations {
   overflow: hidden;
   position: relative;
   height: 400px;
-  width: 1200px;
+  width: auto;
   /* IMPORTANT! */
   flex: 1;
+
 }
 
-.contain-items:nth-of-type(2) {
+.contain-items-informations {
   flex: 1;
   height: 400px;
   padding: 1.75em 0;
   font-size: .75em;
+  overflow: hidden;
 }
 
 .contain-items-bgPattern {
@@ -110,7 +112,7 @@ body {
   z-index: 3;
 }
 
-.contain-items h1 {
+.contain-items-informations h1 {
   color: hsl(238, 29%, 16%);
   margin: .5em 0;
 }
@@ -157,7 +159,7 @@ body {
 }
 
 .contain-items-tabs .contain-items-tabs-content p {
-  line-height: 2;
+  line-height: 1.5;
   padding: 0 0 2em 0;
   border-bottom: 1px solid hsl(240, 5%, 91%);
 }
@@ -188,4 +190,79 @@ footer {
 
 footer a {
   color: hsl(0, 0%, 100%);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 100dvh;
+  }
+
+  .contain {
+    height: auto;
+    width: 320px;
+    flex-direction: column;
+  }
+
+  .contain-items-illustrations {
+    /* border: 1px solid green; */
+  }
+
+  .contain-items-informations {
+    position: relative;
+
+  }
+
+  .contain-items-mb-bgPattern {
+    position: relative;
+    background-image: url('./images/bg-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 50px 100px;
+    top: 0;
+    left: 0;
+    /* background-color: hsla(125, 67%, 44%, 0.3); */
+    /* border: 1px solid blue; */
+  }
+
+  .contain-items-mb-patternBox {
+    position: absolute;
+    background-image: url('./images/illustration-woman-online-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 100px 100px;
+    top: 0%;
+    /* border: 1px solid red; */
+  }
+
+  .contain-items-bgPattern,
+  .contain-items-Pattern,
+  .contain-items-box {
+    display: none;
+  }
+
+  .contain-items-informations h1 {
+    text-align: center;
+  }
+
+  .contain-items-tabs {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contain-items-tabs label {
+    width: 90%;
+    padding: 1.25em 0;
+  }
+
+  .contain-items-tabs .contain-items-tabs-content {
+    width: 90%;
+  }
+
+  .contain-items-tabs .contain-items-tabs-content p {
+    padding: 0 2em 2em 0;
+  }
+
+  .contain-items-tabs label::after {
+    margin: 0;
+  }
 }
